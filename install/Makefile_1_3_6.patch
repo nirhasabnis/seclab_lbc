@@ -1,0 +1,25 @@
+71c71,82
+< CILLY_FEATURES += 
+---
+> CILLY_FEATURES += zcheck 
+> 
+> 
+> CCURED_MODULES  := ptrnode globinit cxxpp \
+> 									 markutil \
+> 									 poly wrappers dependent depfunc taggedunion vararg \
+> 									 curesplit curestats stackoverflow \
+> 									 optutil curechecks cure markcxx markptr \
+> 									 solveutil unionfind type typecheck solver \
+> 									 intset \
+> 									 dominator annot astslicer \
+> 									 verify
+87a99
+> 							$(CCURED_MODULES) \
+97c109
+< SOURCEDIRS  += src src/frontc src/ext src/ext/pta ocamlutil 
+---
+> SOURCEDIRS  += src src/frontc src/ext src/ext/pta ocamlutil <LBC_TOP>/src/ <LBC_TOP>/src/ccured/src
+243c255
+<           $(foreach f,, \
+---
+>           $(foreach f,zcheck, \
